@@ -1,0 +1,13 @@
+sudo modprobe bbswitch
+sudo tee /proc/acpi/bbswitch <<< ON
+sudo modprobe nvidia
+sudo rm /etc/X11/xorg.conf
+sudo cp $INS_DIR/xorg.conf-nvidia /etc/X11/xorg.conf
+rm ~/.xinitrc
+cp $INS_DIR/xinitrc-nvidia ~/.xinitrc
+sudo eselect opengl set nvidia
+#ADD WINDOW MANAGER CONFIG CHANGES HERE
+#rm ~/.i3/config
+#cp $INS_DIR/config-i3-nvidia ~/.i3/config
+#STARTING X
+startx
