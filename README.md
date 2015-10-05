@@ -1,10 +1,9 @@
-<h1>
-NVIDIA-Switch
-<h1/>
+#NVIDIA-Switch
 
 This is a methord for switchable graphics on NVIDIA optimus notebooks in bash, that displays the X serveer directly on that device, by utalising the NVIDIA optimus solution, but the issue with that is the lack of ability to select the INTEL intergrated graphics easily. This set of bash scripts works to resolve that by immplimenting a set of scripts to run at login that gives the user a simple prompt to select the card to be used. It has inbuilt options to edit the configs which can be used by relaunching the scripts whilst X is running
 
-CURRENTLY GENTOO ONLY, but other distro support a few bug fixes away
+###CURRENTLY GENTOO ONLY, 
+but other distro support a few bug fixes away
 ALSO SINGLE USER ONLY, though if there is demand, per user profiles can be implimented
 lastly there is the requirement to place the users password in to change graphics, but down the line this may change if it is implimented as a systemd service and the script calls through somthing like D-BUS
 
