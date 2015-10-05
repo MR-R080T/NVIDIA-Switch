@@ -6,7 +6,7 @@ lastly there is the requirement to place the users password in to change graphic
 
 The script needs all forms of graphical login disabled, to go straight to console, as this needs to run before X
 
-Requirements
+Requirements available in repos
 
 sudo
 bash
