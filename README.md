@@ -22,19 +22,22 @@ to run on boot add an entry to /etc/profile.d/motd.sh which points to the login-
 
 When the script is exercuted the user will be greeted with this screen (but in color, taste the rainbow)
 
+<code> 
 Welcome to NVIDIA Optimus dual-gpu graphical selection menu
 Please select a GPU to start the X session inside your xinitrc, or stay at terminal
 
- Nvidia Dedicated GPU (n)
- Intel intergrated graphics (i)
- Stay at tty (t)
- Advancd options (a)
+Nvidia Dedicated GPU (n)
+Intel intergrated graphics (i)
+Stay at tty (t)
+Advancd options (a)
 
-GPU SELECTION (n/i/t/a)?
+GPU SELECTION (n/i/t/a)? 
+<code/>
 
 Simply type the letter corosponding to the GPU to start it
 Config may be required first so press a and click enter, and you get advanced options
 
+<code>
 Welcome to advanced options
 Helper scripts available are as follows....
 
@@ -50,6 +53,7 @@ Edit intel-switch script (i)
 Back to previous menu (b)
 
 Advanced Option Selection (q/w/a/s/z/x/c/n/i/b)?
+<code/>
 
 There is an example xinitrc preset and xorg.config, as per the arch wiki
 https://wiki.archlinux.org/index.php/NVIDIA_Optimus
