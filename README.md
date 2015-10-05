@@ -11,13 +11,13 @@ The script needs all forms of graphical login disabled, to go straight to consol
 
 Requirements
 
-sudo
-bash
-nvidia proprietary drivers --if theres demand i can release a nouveau version
-intel xorg drivers
-mesa
-bbswitch kernel module
-eselect-opengl
+*sudo
+*bash
+*nvidia proprietary drivers --if theres demand i can release a nouveau version
+*intel xorg drivers
+*mesa
+*bbswitch kernel module
+*eselect-opengl
 
 
 To install, copy the contents of the GIT to a folder on the users computer, and edit the line in login-script.sh, export INS_DIR="/home/christian/.nvidia-switch" and change the location to the installed location
