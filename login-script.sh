@@ -3,7 +3,8 @@ RED=`echo -e "\e[31m"`
 BLUE=`echo -e "\e[34m"`
 GREEN=`echo -e "\e[32m"`
 CYAN=`echo -e "\e[36m"`
-export INS_DIR="/home/christian/.nvidia-switch"
+export OS=`lsb_release -si`
+export INS_DIR="/home/christian/git/NVIDIA-Switch"
 while true; do
 echo ""
 echo "${CYAN} Welcome to NVIDIA Optimus dual-gpu graphical selection menu"
