@@ -2,12 +2,21 @@
 
 This is a methord for switchable graphics on NVIDIA optimus notebooks in bash, that displays the X server directly on that device, by utalising the NVIDIA optimus solution, but the issue with that is the lack of ability to select the INTEL intergrated graphics easily. This set of bash scripts works to resolve that by implimenting a set of scripts to run at login that gives the user a simple prompt to select the card to be used. It has inbuilt options to edit the configs which can be used by relaunching the scripts whilst X is running
 
+#CURRENT SUPPORT FOR
+1. GENTOO
+2. DEBIAN
+3. UBUNTU
+4. LINUX MINT
+5. ELEMENTORY OS
+
 ###UPDATE 1
 Other Distro Support
+
 1. Elementory Os
 2. Debian
 3. Ubuntu
 4. Linux Mint
+
 Adding any other Ubuntu or debian based release is as easy as adding the lsb_release -si output into the nvidia-switch and intel-switch script
 Special thanks for Debian/Ubuntu based distro from marquis196, whos use of update-alternatives for opengl selection in Debian/Ubuntu was the peice I was looking for to make it work on these systems
 https://github.com/maquis196/optirun-prime-switcher
