@@ -5,18 +5,16 @@ sudo rm /etc/X11/xorg.conf
 sudo cp $INS_DIR/xorg.conf-nvidia /etc/X11/xorg.conf
 rm ~/.xinitrc
 cp $INS_DIR/xinitrc-nvidia ~/.xinitrc
-if [$OS == 'Gentoo']
+if [ "$OS" == "Gentoo" ]
 then
 	sudo eselect opengl set nvidia
 fi
-if [$OS == 'Debian'] [$OS == 'elementory os'] [$OS == 'Ubuntu'] [$OS == 'LinuxMint']
+if [ "$OS" == "Debian" ] || [ "$OS" == "elementory os" ] || [ "$OS" == "Ubuntu" ] || [ "$OS" == "LinuxMint" ]
 then
 	export NVIDIA_DRIVER_VER=`dpkg -l | grep binary\ driver | gawk '{print $2}'`
 	update-alternatives --set x86_64-linux-gnu_gl_conf /usr/lib/$NVIDIA_DRIVER_VER/ld.so.conf
 	update-alternatives --set i386-linux-gnu_gl_conf /usr/lib/$NVIDIA_DRIVER_VER/alt_ld.so.conf
 fi
 #ADD WINDOW MANAGER CONFIG CHANGES HERE
-#rm ~/.i3/config
-#cp $INS_DIR/config-i3-nvidia ~/.i3/config
 #STARTING X
 startx

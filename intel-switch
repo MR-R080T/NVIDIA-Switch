@@ -5,17 +5,15 @@ sudo rm /etc/X11/xorg.conf
 sudo cp $INS_DIR/xorg.conf-intel /etc/X11/xorg.conf
 rm ~/.xinitrc
 cp $INS_DIR/xinitrc-intel ~/.xinitrc
-if [$OS == 'Gentoo']
+if [ "$OS" = "Gentoo" ]
 then
 	sudo eselect opengl set xorg-x11
 fi
-if [$OS == 'Debian'] [$OS == 'elementory os'] [$OS == 'Ubuntu'] [$OS == 'LinuxMint']
+if [ "$OS" = "Debian" ] || [ "$OS" = "elementory os" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "LinuxMint" ]
 then
 	update-alternatives --set x86_64-linux-gnu_gl_conf /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
 	update-alternatives --set i386-linux-gnu_gl_conf /usr/lib/i386-linux-gnu/mesa/ld.so.conf
 fi
 #ADD WINDOW MANAGER CONFIG CHANGES HERE
-#rm ~/.i3/config
-#cp $INS_DIR/config-i3-intel ~/.i3/config
 #STARTING X
 startx
