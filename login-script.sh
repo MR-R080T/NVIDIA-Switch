@@ -4,7 +4,7 @@ BLUE=`echo -e "\e[34m"`
 GREEN=`echo -e "\e[32m"`
 CYAN=`echo -e "\e[36m"`
 export OS=`lsb_release -si`
-export INS_DIR="/home/christian/git/NVIDIA-Switch"
+export INS_DIR="/home/christian/.nvidia-switch"
 while true; do
 echo ""
 echo "${CYAN} Welcome to NVIDIA Optimus dual-gpu graphical selection menu"
@@ -17,8 +17,10 @@ echo "${CYAN} Advancd options (a)"
 echo""
 read -p "GPU SELECTION (n/i/t/a)?" gpusel
 	case $gpusel in
-		[nN]* ) $INS_DIR/nvidia-switch;;
-		[iI]* ) $INS_DIR/intel-switch;;
+		[nN]* ) sudo $INS_DIR/nvidia-switch
+			$INS_DIR/nvidia-switch-startx;;
+		[iI]* ) sudo $INS_DIR/intel-switch
+			$INS_DIR/intel-switch-startx;;
 		[tT]* ) exit;;
 		[aA]* )	while true; do
 				clear 
@@ -33,10 +35,13 @@ read -p "GPU SELECTION (n/i/t/a)?" gpusel
 				echo "${GREEN} Turn On NVIDIA Card (x)"
 				echo "${GREEM} NVIDIA card status (c)"
 				echo "${CYAN} Edit nvidia-switch script (n)"
+				echo "${CYAN} Edit the nvidia hardware switch script (j)"
 				echo "${CYAN} Edit intel-switch script (i)"
+				echo "${CYAN} Edit the intel hardware switch script (k)"
+
 				echo "${RED} Back to previous menu (b)"
 				echo ""
-				read -p "${CYAN} Advanced Option Selection (q/w/a/s/z/x/c/n/i/b)?" avdopt
+				read -p "${CYAN} Advanced Option Selection (q/w/a/s/z/x/c/n/j/i/k/b)?" avdopt
 			
 					case $avdopt in
 					 	[qQ]* ) $EDITOR $INS_DIR/xinitrc-nvidia;;
@@ -46,8 +51,10 @@ read -p "GPU SELECTION (n/i/t/a)?" gpusel
 						[zZ]* ) $INS_DIR/nvidia-off;;
 						[xX]* ) $INS_DIR/nvidia-on;;
 						[cC]* ) $INS_DIR/nvidia-status;;
-						[nN]* ) $EDITOR $INS_DIR/nvidia-switch;;
-						[iI]* ) $EDITOR $INS_DIR/intel-switch;;
+						[nN]* ) $EDITOR $INS_DIR/nvidia-switch-startx;;
+						[jJ]* ) $EDITOR $INS_DIR/nvidia-switch;;
+						[iI]* ) $EDITOR $INS_DIR/intel-switch-startx;;
+						[kK]* ) $EDITOR $INS_DIR/intel-switch;;
 						[bB]* ) clear && break;;
 					esac
 			done

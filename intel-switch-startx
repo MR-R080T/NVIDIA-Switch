@@ -1,0 +1,6 @@
+rm ~/.xinitrc
+cp $INS_DIR/xinitrc-intel ~/.xinitrc
+#ADD WINDOW MANAGER CONFIG CHANGES HERE
+#rm /home/$usr/.i3/config
+#cp $INS_DIR/config-i3-intel ~/.i3/config
+startx

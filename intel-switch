@@ -1,19 +1,16 @@
-sudo modprobe bbswitch
-sudo rmmod nvidia
-sudo tee /proc/acpi/bbswitch <<< OFF
-sudo rm /etc/X11/xorg.conf
-sudo cp $INS_DIR/xorg.conf-intel /etc/X11/xorg.conf
-rm ~/.xinitrc
-cp $INS_DIR/xinitrc-intel ~/.xinitrc
+export OS=`lsb_release -si`
+export INS_DIR="/home/christian/.nvidia-switch"
+modprobe bbswitch
+rmmod nvidia
+tee /proc/acpi/bbswitch <<< OFF
+rm /etc/X11/xorg.conf
+cp $INS_DIR/xorg.conf-intel /etc/X11/xorg.conf
 if [ "$OS" = "Gentoo" ]
 then
-	sudo eselect opengl set xorg-x11
+	eselect opengl set xorg-x11
 fi
 if [ "$OS" = "Debian" ] || [ "$OS" = "elementory os" ] || [ "$OS" = "Ubuntu" ] || [ "$OS" = "LinuxMint" ]
 then
 	update-alternatives --set x86_64-linux-gnu_gl_conf /usr/lib/x86_64-linux-gnu/mesa/ld.so.conf
 	update-alternatives --set i386-linux-gnu_gl_conf /usr/lib/i386-linux-gnu/mesa/ld.so.conf
 fi
-#ADD WINDOW MANAGER CONFIG CHANGES HERE
-#STARTING X
-startx
