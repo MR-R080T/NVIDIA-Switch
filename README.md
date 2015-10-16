@@ -17,6 +17,10 @@ Other Distro Support
 3. Ubuntu
 4. Linux Mint
 
+###UPDATE 2
+We now can run the script without sudo premissions, see bellow for instructions
+
+
 Adding any other Ubuntu or debian based release is as easy as adding the lsb_release -si output into the nvidia-switch and intel-switch script
 Special thanks for Debian/Ubuntu based distro from marquis196, whos use of update-alternatives for opengl selection in Debian/Ubuntu was the peice I was looking for to make it work on these systems
 https://github.com/maquis196/optirun-prime-switcher
@@ -39,8 +43,14 @@ Requirements
 8. update-alternatives FOR DEBIAN BASED
 
 
-To install, copy the contents of the GIT to a folder on the users computer, and edit the line in login-script.sh, export INS_DIR="/home/christian/.nvidia-switch" and change the location to the installed location
+To install, copy the contents of the GIT to a folder on the users computer, and edit the line in login-script.sh, nvidia-switch-startx and intel-switch-startx line: export INS_DIR="/home/christian/.nvidia-switch" and change the location to the installed location
 to run on boot add an entry to /etc/profile.d/motd.sh which points to the login-script.sh
+add an entry to /etc/sudoers as follows
+
+```
+christian ALL = (ALL) NOPASSWD: /home/christian/.nvidia-switch/intel-switch
+christian ALL = (ALL) NOPASSWD: /home/christian/.nvidia-switch/nvidia-switch
+```
 
 When the script is exercuted the user will be greeted with this screen (but in color, taste the rainbow)
 
